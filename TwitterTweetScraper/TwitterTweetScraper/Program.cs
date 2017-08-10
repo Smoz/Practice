@@ -46,10 +46,10 @@ namespace TwitterTweetScraper
 
         static void UserCredentialAuthentication()
         {
-            string consumerKey = "e2dmhFO1884TnX3gdHX8bNDp7"; // Looks like: e2zthFO1884yui3qwea8mklpo7
-            string consumerSecret = "mspeCi6o8HhIslB4DDyxI7VDLW4MbEPcMAUNQ1zcPOMychkFDw"; // Looks like: qawsBi6o8HhIslB4DDyxI7VDLW4MbEPcGANQ1zcPOMyYUKWEw
-            string accessToken = "2470201351-i3lO4J5nzEFfxxIIkTotRg9Spfqd4Dej357rQv4"; // Looks like: 1847523685-i3lO4J5mkGrRxxIIkTotRg9Spfqd4Gyu357rQv4
-            string accessTokenSecret = "BugC8CnXQ3hNWwKjaV1kOyjgLOuriESPCEwS0A7kLJHjx"; // Looks like: CatC8CnXQ3hNWwKhov4kOyjgADellESPCieS0A7kLJHjx
+            string consumerKey = ""; // Looks like: e2zthFO1884yui3qwea8mklpo7
+            string consumerSecret = ""; // Looks like: qawsBi6o8HhIslB4DDyxI7VDLW4MbEPcGANQ1zcPOMyYUKWEw
+            string accessToken = ""; // Looks like: 1847523685-i3lO4J5mkGrRxxIIkTotRg9Spfqd4Gyu357rQv4
+            string accessTokenSecret = ""; // Looks like: CatC8CnXQ3hNWwKhov4kOyjgADellESPCieS0A7kLJHjx
 
             Auth.SetUserCredentials(consumerKey, consumerSecret, accessToken, accessTokenSecret);
         }
@@ -85,7 +85,7 @@ namespace TwitterTweetScraper
             };
 
             var allTweets = Timeline.GetUserTimeline(userName, numberOfTweetsToScrape).ToArray();
-            using (StreamWriter writer = new StreamWriter(savePath + userName + " Tweets.txt", true))
+            using (StreamWriter writer = new StreamWriter(savePath + userName + " - Tweets.txt", true))
             {
                 foreach (var tweets in allTweets)
                 {
