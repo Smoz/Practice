@@ -72,11 +72,9 @@ namespace TwitterTweetScraper
             return numberOfTweetsToScrape;
         }
 
-        static void TweetScraper(string userNameToFind, int numberOfTweetsToScrape, string savePath)
+        static void TweetScraper(string userName, int numberOfTweets, string savePath)
         {
-
-            string userName = userNameToFind;
-            int numberOfTweets = numberOfTweetsToScrape;            
+         
 
             RateLimit.RateLimitTrackerMode = RateLimitTrackerMode.TrackAndAwait;
             RateLimit.QueryAwaitingForRateLimit += (sender, args) =>
@@ -84,7 +82,7 @@ namespace TwitterTweetScraper
                 Console.WriteLine($"Query : {args.Query} is awaiting for rate limits!");
             };
 
-            var allTweets = Timeline.GetUserTimeline(userName, numberOfTweetsToScrape).ToArray();
+            var allTweets = Timeline.GetUserTimeline(userName, numberOfTweets).ToArray();
             using (StreamWriter writer = new StreamWriter(savePath + userName + " - Tweets.txt", true))
             {
                 foreach (var tweets in allTweets)
