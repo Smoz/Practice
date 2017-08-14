@@ -28,7 +28,7 @@ namespace TwitterTweetScraper
 
         static void Greeting()
         {
-            string savePath = "H:\\"; // Change to something like C:\\Users\\YourUserName\\
+            string savePath = "C:\\Users\\Steve\\Documents\\"; // Change to something like C:\\Users\\YourUserName\\
             Console.WriteLine("Welcome to the Twitter Tweet Scraper!");
             UserCredentialAuthentication();
             string userName = UserNameToFind();
@@ -46,10 +46,10 @@ namespace TwitterTweetScraper
 
         static void UserCredentialAuthentication()
         {
-            string consumerKey = ""; // Looks like: e2zthFO1884yui3qwea8mklpo7
-            string consumerSecret = ""; // Looks like: qawsBi6o8HhIslB4DDyxI7VDLW4MbEPcGANQ1zcPOMyYUKWEw
-            string accessToken = ""; // Looks like: 1847523685-i3lO4J5mkGrRxxIIkTotRg9Spfqd4Gyu357rQv4
-            string accessTokenSecret = ""; // Looks like: CatC8CnXQ3hNWwKhov4kOyjgADellESPCieS0A7kLJHjx
+            string consumerKey = "e2dmhFO1884TnX3gdHX8bNDp7"; // Looks like: e2zthFO1884yui3qwea8mklpo7
+            string consumerSecret = "mspeCi6o8HhIslB4DDyxI7VDLW4MbEPcMAUNQ1zcPOMychkFDw"; // Looks like: qawsBi6o8HhIslB4DDyxI7VDLW4MbEPcGANQ1zcPOMyYUKWEw
+            string accessToken = "2470201351-i3lO4J5nzEFfxxIIkTotRg9Spfqd4Dej357rQv4"; // Looks like: 1847523685-i3lO4J5mkGrRxxIIkTotRg9Spfqd4Gyu357rQv4
+            string accessTokenSecret = "BugC8CnXQ3hNWwKjaV1kOyjgLOuriESPCEwS0A7kLJHjx"; // Looks like: CatC8CnXQ3hNWwKhov4kOyjgADellESPCieS0A7kLJHjx
 
             Auth.SetUserCredentials(consumerKey, consumerSecret, accessToken, accessTokenSecret);
         }
@@ -73,8 +73,7 @@ namespace TwitterTweetScraper
         }
 
         static void TweetScraper(string userName, int numberOfTweets, string savePath)
-        {
-         
+        {       
 
             RateLimit.RateLimitTrackerMode = RateLimitTrackerMode.TrackAndAwait;
             RateLimit.QueryAwaitingForRateLimit += (sender, args) =>
